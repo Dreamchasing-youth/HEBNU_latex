@@ -1,0 +1,88 @@
+% ----------------------------------------------------------------
+% 页面设置
+\usepackage{geometry}
+\geometry{a4paper,left=2.5cm,right=2.5cm,top=2.5cm,bottom=2.5cm}
+% ----------------------------------------------------------------
+% 字体设置
+% 将\songti,\heiti,\kaishu设置为可加粗可倾斜的字体
+\xeCJKsetup{
+AutoFakeBold={1.75},
+AutoFakeSlant={true},
+}
+\newCJKfontfamily[Xsong]\Xsongti[AutoFakeBold,AutoFakeSlant]{SimSun}
+\newCJKfontfamily[Xhei]\Xheiti[AutoFakeBold,AutoFakeSlant]{SimHei}
+\newCJKfontfamily[Xkai]\Xkaishu[AutoFakeBold,AutoFakeSlant]{KaiTi}
+\renewcommand{\songti}{\Xsongti}
+\renewcommand{\heiti}{\Xheiti}
+\renewcommand{\kaishu}{\Xkaishu}
+% ----------------------------------------------------------------
+% 页眉页脚设置
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyfoot[LE,RO]{\thepage}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+% 使\cleardoublepage建立的空白页无页眉页脚
+\makeatletter
+\def\cleardoublepage{
+  \clearpage
+  \if@twoside
+    \ifodd
+      \c@page
+    \else
+      \begingroup
+        \mbox{}
+        \thispagestyle{empty}
+        \newpage
+        \if@twocolumn\mbox{}\newpage\fi
+      \endgroup
+    \fi
+  \fi}
+\makeatother
+% ----------------------------------------------------------------
+% 章节标题样式设置
+\ctexset{
+  chapter = {
+    beforeskip = {0\ccwd},
+    afterskip = {1.75\ccwd},
+    format = \centering\zihao{3}\heiti,
+    pagestyle = fancy,
+  },
+  section = {
+    beforeskip = {0.5\ccwd},
+    afterskip = {0.5\ccwd},
+    format = \indent\zihao{4}\heiti,
+  },
+  subsection = {
+    beforeskip = {0\ccwd},
+    afterskip = {0\ccwd},
+    format = \indent\bfseries\zihao{-4}\songti,
+  },
+}
+% ----------------------------------------------------------------
+% 目录设置
+\ctexset{
+  contentsname = 目~~~录,
+}
+\usepackage{titletoc}
+% 参考!
+\titlecontents{chapter}
+	[0\ccwd]
+	{\addvspace{0.5\ccwd}\zihao{-4}\songti}
+	{\thecontentslabel~~}
+	{}
+	{\titlerule*[0.5pc]{$\cdot$}\contentspage}
+\titlecontents{section}
+	[1.75\ccwd]
+	{\addvspace{0.5\ccwd}\zihao{-4}\songti}
+	{\thecontentslabel~~~}
+	{}
+	{\titlerule*[0.5pc]{$\cdot$}\contentspage}
+\titlecontents{subsection}
+	[3\ccwd]
+	{\addvspace{0.5\ccwd}\zihao{-4}\songti}
+	{\thecontentslabel~~~}
+	{}
+	{\titlerule*[0.5pc]{$\cdot$}\contentspage}
+% ----------------------------------------------------------------
