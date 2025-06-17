@@ -3,6 +3,9 @@
 #### 介绍
 河北师范大学毕业论文latex模板 (非官方)
 
-使用最新版texlive或miktex
+适用于最新版的texlive或miktex
 
 编译方式: xelatex
+
+#### V0.5版更新说明
+ABC三版主要区别: A版行间距接近于研究生院发布的Word模板; C版行间距接近于数学科学学院发布的Latex模板; B版行间距介于A于B之间.
