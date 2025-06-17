@@ -1,0 +1,60 @@
+% ----------------------------------------------------------------
+\documentclass[fontset=windows,zihao=-4,linespread=1.4]{ctexbook}
+% ----------------------------------------------------------------
+\input{settings/1} % 非必要不修改
+% 页面设置 字体设置 页眉页脚设置 章节标题样式设置 目录设置
+% ----------------------------------------------------------------
+\input{settings/2}
+% 数学宏集 定理环境 数学符号
+% 在这里定义自己所需要的定理环境、数学符号等
+% ----------------------------------------------------------------
+\input{settings/3}
+% 常用宏包 参考文献设置 超链接设置 ......
+% 在这里添加自己所需要的宏包
+% ----------------------------------------------------------------
+\begin{document}
+% ----------------------------------------------------------------
+% 论文基本信息
+\input{settings/A} % 定义命令 非必要不修改
+\input{settings/B} % 在这里填写论文的基本信息
+% ----------------------------------------------------------------
+\input{settings/cover} % 制作封面 非必要不修改
+
+\input{settings/title page} % 制作标题页 非必要不修改
+
+\input{settings/statement} % 制作学位论文原创性声明页 非必要不修改
+% ----------------------------------------------------------------
+\frontmatter % 前言部分，页码使用小写罗马数字；其后的 \chapter 不编号。
+\pagenumbering{Roman} % 页码使用大写罗马数字
+
+\input{subdocuments/abstract} % 摘要
+
+\tableofcontents % 制作目录
+
+\input{subdocuments/symbols} % 符号说明
+% ----------------------------------------------------------------
+\mainmatter % 正文部分，页码使用阿拉伯数字，从 1 开始计数；其后的章节编号正常。
+
+\input{subdocuments/introduction}
+
+\input{subdocuments/chapter1}
+
+\input{subdocuments/chapter2}
+% ----------------------------------------------------------------
+\backmatter % 后记部分，页码格式不变，继续正常计数；其后的\chapter 不编号。
+
+\input{subdocuments/conclusion}
+
+% 参考文献
+\input{subdocuments/references_A}
+%\bibliographystyle{settings/gbt7714-numerical_change}
+%\bibliography{subdocuments/references}
+
+\input{subdocuments/appendixA}
+
+\input{subdocuments/postscript}
+
+\input{subdocuments/publications}
+% ----------------------------------------------------------------
+\end{document}
+% ----------------------------------------------------------------
